@@ -1,9 +1,9 @@
 export const projects = [
   {
     id: "project-1",
-    title: "Project One",
+    title: "gio.dev",
     description:
-      "A short, punchy description of what this project does and why it matters. Keep it to 1–2 sentences.",
+      "Personal portfolio website built with React, Tailwind CSS, and Framer Motion. Designed with a minimal editorial aesthetic, smooth scroll animations, and a dark/light mode toggle.",
     tags: ["React", "Tailwind CSS", "Framer Motion"],
     liveUrl: "https://gio-dev-nkja.vercel.app/",
     githubUrl: "https://github.com",
@@ -18,11 +18,10 @@ export const projects = [
   },
   {
     id: "project-3",
-    title: "Project Three",
+    title: "Ecommerce Website",
     description:
-      "Third project. Two strong projects beat five weak ones — only include work you're proud of.",
-    tags: ["React", "Figma", "Vercel"],
-    liveUrl: "https://example.com",
-    githubUrl: "https://github.com",
+      "A full-featured ecommerce platform currently in development — product listings, cart, checkout, and more. Built to be fast, clean, and conversion-focused.",
+    tags: ["Coming Soon", "In Development"],
+    comingSoon: true,
   },
 ];
