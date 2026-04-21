@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Semantic color tokens ────────────────────────────────────────────────── */
+/* Light mode */
+:root {
+  --color-bg:      #f2f2f2;
+  --color-surface: #e8e8e8;
+  --color-text:    #0d0d0d;
+  --color-muted:   #888888;
+  --color-accent:  #0d0d0d;
+  --color-border:  rgba(0, 0, 0, 0.09);
+}
+
+/* Dark mode — activated by .dark on <html> */
+.dark {
+  --color-bg:      #0d0d0d;
+  --color-surface: #151515;
+  --color-text:    #e4e4e4;
+  --color-muted:   #505050;
+  --color-accent:  #e4e4e4;
+  --color-border:  rgba(255, 255, 255, 0.07);
+}
+
+/* ─── Marquee edge fade ─────────────────────────────────────────────────────── */
+.marquee-fade {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+}
+
+/* ─── Base ──────────────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Glitch hover effect ───────────────────────────────────────────────────── */
+@keyframes glitch {
+  0%   { text-shadow: none; }
+  14%  { text-shadow: -3px 0 rgba(255, 0, 60, 0.85), 3px 0 rgba(0, 238, 255, 0.85); }
+  28%  { text-shadow: 3px 0 rgba(255, 0, 60, 0.85), -3px 0 rgba(0, 238, 255, 0.85); }
+  42%  { text-shadow: none; }
+  57%  { text-shadow: -2px 0 rgba(255, 0, 60, 0.6), 2px 0 rgba(0, 238, 255, 0.6); }
+  71%  { text-shadow: 2px 0 rgba(255, 0, 60, 0.4), -2px 0 rgba(0, 238, 255, 0.4); }
+  85%  { text-shadow: none; }
+  100% { text-shadow: -1px 0 rgba(255, 0, 60, 0.3), 1px 0 rgba(0, 238, 255, 0.3); }
+}
+
+.glitch:hover {
+  animation: glitch 0.45s steps(3, end) infinite;
+  cursor: default;
+}
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
