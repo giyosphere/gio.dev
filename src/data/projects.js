@@ -5,7 +5,7 @@ export const projects = [
     description:
       "A short, punchy description of what this project does and why it matters. Keep it to 1–2 sentences.",
     tags: ["React", "Tailwind CSS", "Framer Motion"],
-    liveUrl: "https://vercel.com/giyospheres-projects/gio-dev-nkja",
+    liveUrl: "https://gio-dev-nkja.vercel.app/",
     githubUrl: "https://github.com",
   },
   {
