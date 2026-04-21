@@ -34,21 +34,21 @@ export default function ProjectModal({ project, onClose }) {
         exit={{ y: "100%" }}
         transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
         className="relative bg-bg rounded-t-3xl overflow-hidden flex flex-col"
-        style={{ height: "92vh" }}
+        style={{ height: "92dvh" }}
       >
         {/* Top bar */}
-        <div className="shrink-0 flex justify-between items-center px-6 md:px-10 py-4 border-b border-border">
-          <span className="font-body text-sm text-muted">
+        <div className="shrink-0 flex justify-between items-center px-4 md:px-10 py-3 md:py-4 border-b border-border">
+          <span className="font-body text-xs md:text-sm text-muted truncate pr-4">
             {project.title}{" "}
             <span className="text-muted/40">by</span>{" "}
             <span className="text-text font-medium">Gio Dalaoyan</span>
           </span>
-          <div className="flex items-center gap-5">
-            <button aria-label="Bookmark" className="text-muted hover:text-text transition-colors">
-              <Bookmark size={17} />
+          <div className="flex items-center gap-3 md:gap-5 shrink-0">
+            <button aria-label="Bookmark" className="text-muted hover:text-text transition-colors p-1">
+              <Bookmark size={15} />
             </button>
-            <button aria-label="Share" className="text-muted hover:text-text transition-colors">
-              <Share2 size={17} />
+            <button aria-label="Share" className="text-muted hover:text-text transition-colors p-1">
+              <Share2 size={15} />
             </button>
             {project.liveUrl && (
               <a
@@ -56,27 +56,27 @@ export default function ProjectModal({ project, onClose }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Open live site"
-                className="text-muted hover:text-text transition-colors"
+                className="text-muted hover:text-text transition-colors p-1"
               >
-                <ExternalLink size={17} />
+                <ExternalLink size={15} />
               </a>
             )}
           </div>
         </div>
 
         {/* Title section */}
-        <div className="shrink-0 text-center py-6 px-6 border-b border-border">
-          <p className="font-mono text-[10px] text-muted tracking-[0.25em] uppercase mb-2">
+        <div className="shrink-0 text-center py-4 md:py-6 px-4 md:px-6 border-b border-border">
+          <p className="font-mono text-[9px] md:text-[10px] text-muted tracking-[0.25em] uppercase mb-1.5 md:mb-2">
             {project.tags[0]}&nbsp;·&nbsp;{new Date().getFullYear()}
           </p>
-          <h2 className="font-body font-[100] text-4xl md:text-6xl leading-[0.92] tracking-[0.02em] uppercase text-text">
+          <h2 className="font-body font-[100] text-3xl md:text-6xl leading-[0.92] tracking-[0.02em] uppercase text-text">
             {project.title}
           </h2>
-          <div className="flex items-center justify-center gap-2 mt-3">
-            <div className="w-6 h-6 rounded-full bg-surface border border-border flex items-center justify-center font-mono text-[9px] text-muted">
+          <div className="flex items-center justify-center gap-2 mt-2 md:mt-3">
+            <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-surface border border-border flex items-center justify-center font-mono text-[9px] text-muted">
               G
             </div>
-            <span className="font-body text-sm text-text">Gio Dalaoyan</span>
+            <span className="font-body text-xs md:text-sm text-text">Gio Dalaoyan</span>
           </div>
         </div>
 
@@ -104,11 +104,11 @@ export default function ProjectModal({ project, onClose }) {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 8 }}
                 transition={{ duration: 0.2 }}
-                className="absolute bottom-20 left-1/2 -translate-x-1/2 w-full max-w-sm bg-bg border border-border rounded-2xl px-5 py-4 shadow-2xl"
+                className="absolute bottom-16 md:bottom-20 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] max-w-sm bg-bg border border-border rounded-2xl px-4 md:px-5 py-3 md:py-4 shadow-2xl"
               >
                 {activeTab === "Creator" && (
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-surface border border-border flex items-center justify-center font-mono text-sm text-muted">
+                    <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-surface border border-border flex items-center justify-center font-mono text-sm text-muted shrink-0">
                       G
                     </div>
                     <div>
@@ -169,10 +169,14 @@ export default function ProjectModal({ project, onClose }) {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.25, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10"
+          className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10 px-4 md:px-0 w-full md:w-auto justify-center"
         >
-          <div className="flex items-center bg-text text-bg rounded-2xl overflow-hidden shadow-xl">
-            <div className="w-11 h-11 bg-text/80 flex items-center justify-center font-mono text-bg text-sm font-bold mx-0.5 rounded-xl">
+          {/* Scrollable pill — scrolls horizontally on mobile if needed */}
+          <div
+            className="flex items-center bg-text text-bg rounded-2xl shadow-xl overflow-x-auto scrollbar-none"
+            style={{ maxWidth: "calc(100vw - 80px)" }}
+          >
+            <div className="w-9 h-9 md:w-11 md:h-11 bg-text/80 flex items-center justify-center font-mono text-bg text-xs md:text-sm font-bold mx-0.5 rounded-xl shrink-0">
               G.
             </div>
 
@@ -180,7 +184,7 @@ export default function ProjectModal({ project, onClose }) {
               <button
                 key={tab}
                 onClick={() => setActiveTab(activeTab === tab ? null : tab)}
-                className={`px-4 py-3 font-body text-xs tracking-wide transition-colors whitespace-nowrap ${
+                className={`px-3 md:px-4 py-2.5 md:py-3 font-body text-[11px] md:text-xs tracking-wide transition-colors whitespace-nowrap shrink-0 ${
                   activeTab === tab ? "text-bg" : "text-bg/45 hover:text-bg/75"
                 }`}
               >
@@ -193,7 +197,7 @@ export default function ProjectModal({ project, onClose }) {
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-[#f5c842] text-[#111] font-body font-medium text-xs px-5 py-2.5 m-1 rounded-xl hover:bg-[#f5c842]/90 transition-colors tracking-wide whitespace-nowrap"
+                className="bg-[#f5c842] text-[#111] font-body font-medium text-[11px] md:text-xs px-4 md:px-5 py-2 md:py-2.5 m-1 rounded-xl hover:bg-[#f5c842]/90 transition-colors tracking-wide whitespace-nowrap shrink-0"
               >
                 Visit Site
               </a>
@@ -203,9 +207,9 @@ export default function ProjectModal({ project, onClose }) {
           <button
             onClick={onClose}
             aria-label="Close modal"
-            className="w-11 h-11 bg-text text-bg rounded-xl flex items-center justify-center hover:opacity-75 transition-opacity shadow-xl"
+            className="w-9 h-9 md:w-11 md:h-11 bg-text text-bg rounded-xl flex items-center justify-center hover:opacity-75 transition-opacity shadow-xl shrink-0"
           >
-            <X size={17} />
+            <X size={15} />
           </button>
         </motion.div>
       </motion.div>
