@@ -169,13 +169,10 @@ export default function ProjectModal({ project, onClose }) {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.25, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10 px-4 md:px-0 w-full md:w-auto justify-center"
+          className="absolute bottom-4 md:bottom-6 left-3 right-3 md:left-1/2 md:right-auto md:-translate-x-1/2 flex items-center gap-2 z-10"
         >
-          {/* Scrollable pill — scrolls horizontally on mobile if needed */}
-          <div
-            className="flex items-center bg-text text-bg rounded-2xl shadow-xl overflow-x-auto scrollbar-none"
-            style={{ maxWidth: "calc(100vw - 80px)" }}
-          >
+          {/* Pill — flex-1 on mobile so it fills space left of X button, auto on desktop */}
+          <div className="flex-1 md:flex-none flex items-center bg-text text-bg rounded-2xl shadow-xl overflow-x-auto scrollbar-none">
             <div className="w-9 h-9 md:w-11 md:h-11 bg-text/80 flex items-center justify-center font-mono text-bg text-xs md:text-sm font-bold mx-0.5 rounded-xl shrink-0">
               G.
             </div>
