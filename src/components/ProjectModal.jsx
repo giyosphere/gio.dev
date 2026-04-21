@@ -6,16 +6,14 @@ import Tag from "./ui/Tag.jsx";
 const TABS = ["Overview", "Stack", "Links"];
 
 export default function ProjectModal({ project, onClose }) {
-  const [activeTab, setActiveTab] = useState("Overview");
+               const [activeTab, setActiveTab] = useState("Overview");
 
-  // Close on Escape
-  useEffect(() => {
+       useEffect(() => {
     const onKey = (e) => e.key === "Escape" && onClose();
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
 
-  // Lock body scroll
   useEffect(() => {
     document.body.style.overflow = "hidden";
     return () => { document.body.style.overflow = ""; };
@@ -29,7 +27,6 @@ export default function ProjectModal({ project, onClose }) {
       transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
       className="fixed inset-0 z-[100] bg-bg flex flex-col overflow-hidden"
     >
-      {/* ── Header ─────────────────────────────────────────── */}
       <header className="shrink-0 flex justify-between items-center px-6 md:px-10 py-4 border-b border-border">
         <span className="font-body text-sm text-muted">
           {project.title}{" "}
@@ -64,7 +61,6 @@ export default function ProjectModal({ project, onClose }) {
         </div>
       </header>
 
-      {/* ── Main content ───────────────────────────────────── */}
       <div className="flex-1 flex flex-col items-center justify-center px-6 pb-36 overflow-y-auto">
         <motion.div
           initial={{ opacity: 0, y: 28 }}
@@ -72,17 +68,14 @@ export default function ProjectModal({ project, onClose }) {
           transition={{ delay: 0.12, duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
           className="w-full max-w-3xl text-center"
         >
-          {/* Eyebrow */}
           <p className="font-mono text-[10px] text-muted tracking-[0.25em] uppercase mb-5">
             {project.tags[0]} &nbsp;·&nbsp; {new Date().getFullYear()}
           </p>
 
-          {/* Big title */}
           <h2 className="font-body font-[100] text-[10vw] md:text-[7vw] leading-[0.92] tracking-[0.02em] uppercase text-text">
             {project.title}
           </h2>
 
-          {/* Author chip */}
           <div className="flex items-center justify-center gap-3 mt-7 mb-14">
             <div className="w-7 h-7 rounded-full bg-surface border border-border flex items-center justify-center font-mono text-[10px] text-muted">
               G
@@ -90,7 +83,6 @@ export default function ProjectModal({ project, onClose }) {
             <span className="font-body text-sm text-text">Gio Dalaoyan</span>
           </div>
 
-          {/* Tab content */}
           <div className="text-left max-w-lg mx-auto min-h-[80px]">
             <AnimatePresence mode="wait">
               {activeTab === "Overview" && (
@@ -160,16 +152,13 @@ export default function ProjectModal({ project, onClose }) {
         </motion.div>
       </div>
 
-      {/* ── Bottom floating bar ────────────────────────────── */}
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
         className="fixed bottom-7 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10"
       >
-        {/* Tab pill */}
         <div className="flex items-center bg-text text-bg rounded-2xl overflow-hidden shadow-xl">
-          {/* Logo badge */}
           <div className="w-11 h-11 bg-text/80 flex items-center justify-center font-mono text-bg text-sm font-bold mx-0.5 rounded-xl">
             G.
           </div>
@@ -200,7 +189,6 @@ export default function ProjectModal({ project, onClose }) {
           )}
         </div>
 
-        {/* Close button */}
         <button
           onClick={onClose}
           aria-label="Close modal"

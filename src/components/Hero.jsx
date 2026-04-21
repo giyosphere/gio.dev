@@ -12,10 +12,8 @@ export default function Hero() {
       id="home"
       className="min-h-screen flex flex-col md:flex-row border-b border-border"
     >
-      {/* ── Left: Name block ─────────────────────────────────── */}
       <div className="flex-1 flex flex-col justify-between px-8 md:px-14 lg:px-20 pt-28 md:pt-0 md:justify-center pb-10 border-b md:border-b-0 md:border-r border-border">
         <div>
-          {/* Big name */}
           <motion.h1
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -27,7 +25,6 @@ export default function Hero() {
             Dalaoyan
           </motion.h1>
 
-          {/* Tagline */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -38,7 +35,6 @@ export default function Hero() {
           </motion.p>
         </div>
 
-        {/* Email at bottom-left */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -57,21 +53,18 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* ── Right: About panel ───────────────────────────────── */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.4 }}
         className="w-full md:w-[340px] lg:w-[400px] shrink-0 flex flex-col justify-center px-8 md:px-10 lg:px-14 py-14 md:py-0"
       >
-        {/* Heading with divider */}
         <div className="border-b border-border pb-4 mb-8">
           <span className="font-body text-[11px] tracking-[0.22em] uppercase text-text">
             About Me
           </span>
         </div>
 
-        {/* Bio paragraphs */}
         <div className="flex flex-col gap-5">
           {ABOUT_PARAGRAPHS.map((para, i) => (
             <p

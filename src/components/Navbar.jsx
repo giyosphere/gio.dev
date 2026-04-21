@@ -23,9 +23,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* ── Desktop sidebar ── */}
       <aside className="hidden md:flex fixed top-0 left-0 h-screen w-36 lg:w-44 flex-col px-7 py-10 z-40 border-r border-border">
-        {/* Nav links */}
         <nav className="flex flex-col gap-5">
           {NAV_ITEMS.map(({ label, href }) => {
             const sectionKey = href.replace("#", "") || "home";
@@ -54,7 +52,6 @@ export default function Navbar() {
 
         <div className="flex-1" />
 
-        {/* Social icons */}
         <div className="flex flex-col gap-5 mb-10">
           {SOCIALS.map(({ Icon, href, label }) => (
             <a
@@ -70,13 +67,11 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Copyright */}
         <p className="font-mono text-[9px] text-muted leading-relaxed">
           © Gio Dalaoyan
         </p>
       </aside>
 
-      {/* ── Mobile top bar ── */}
       <div className="md:hidden fixed top-0 inset-x-0 z-50 flex justify-between items-center px-6 py-4 bg-bg/80 backdrop-blur-md border-b border-border pr-24">
         <span className="font-body text-xs tracking-[0.18em] uppercase text-text">
           gio.dev
@@ -90,7 +85,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile fullscreen menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div

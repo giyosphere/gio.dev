@@ -9,15 +9,12 @@ import ThemeToggle from "./components/ui/ThemeToggle.jsx";
 export default function App() {
   return (
     <div className="bg-bg text-text min-h-screen">
-      {/* Fixed left sidebar */}
       <Navbar />
 
-      {/* Fixed pill toggle — top right */}
       <div className="fixed top-[14px] right-6 z-[60]">
         <ThemeToggle />
       </div>
 
-      {/* Main content — offset by sidebar on desktop */}
       <div className="md:ml-36 lg:ml-44 pt-16 md:pt-0">
         <Hero />
         <Projects />
