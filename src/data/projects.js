@@ -10,11 +10,11 @@ export const projects = [
   },
   {
     id: "project-2",
-    title: "Project Two",
+    title: "Brookes Point CHS",
     description:
-      "Another project description. Focus on the problem solved, not the tech stack — the tags handle that.",
-    tags: ["JavaScript", "REST API", "CSS"],
-    githubUrl: "https://github.com",
+      "Official website for Brookes Point Christian High School — currently in development. A clean, modern school site built to showcase the institution's programs, announcements, and community.",
+    tags: ["Coming Soon", "In Development"],
+    comingSoon: true,
   },
   {
     id: "project-3",

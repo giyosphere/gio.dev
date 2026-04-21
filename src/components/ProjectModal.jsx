@@ -3,7 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Bookmark, Share2, ExternalLink } from "lucide-react";
 import Tag from "./ui/Tag.jsx";
 
-const TABS = ["Creator", "Stack", "Details", "Links"];
+const TABS_DEFAULT    = ["Creator", "Stack", "Details", "Links"];
+const TABS_COMING_SOON = ["Creator", "Details"];
 
 export default function ProjectModal({ project, onClose }) {
   const [activeTab, setActiveTab] = useState(null);
@@ -80,9 +81,44 @@ export default function ProjectModal({ project, onClose }) {
           </div>
         </div>
 
-        {/* Website preview iframe */}
+        {/* Website preview iframe / coming soon teaser */}
         <div className="flex-1 overflow-hidden relative">
-          {project.liveUrl ? (
+          {project.comingSoon ? (
+            <div className="flex flex-col items-center justify-center h-full gap-6 px-8 text-center select-none">
+              <motion.p
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.15, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+                className="font-mono text-[10px] tracking-[0.3em] uppercase text-muted"
+              >
+                In Development
+              </motion.p>
+              <motion.h3
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.25, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                className="font-body font-[100] text-3xl md:text-5xl text-text leading-tight tracking-wide"
+              >
+                {project.title}
+              </motion.h3>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+                className="font-body text-sm text-muted leading-relaxed max-w-sm"
+              >
+                {project.description}
+              </motion.p>
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: [0, 1, 0] }}
+                transition={{ delay: 0.6, duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+                className="font-mono text-[10px] tracking-[0.4em] uppercase text-muted/50"
+              >
+                Coming Soon
+              </motion.span>
+            </div>
+          ) : project.liveUrl ? (
             <iframe
               src={project.liveUrl}
               title={project.title}
@@ -177,7 +213,7 @@ export default function ProjectModal({ project, onClose }) {
               G.
             </div>
 
-            {TABS.map((tab) => (
+            {(project.comingSoon ? TABS_COMING_SOON : TABS_DEFAULT).map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(activeTab === tab ? null : tab)}

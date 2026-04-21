@@ -22,8 +22,8 @@ export default function Projects() {
           {projects.map((project, i) => (
             <Reveal key={project.id} delay={i * 0.08}>
               <article
-                className="group py-8 flex flex-col md:flex-row md:items-center gap-4 md:gap-0 cursor-pointer"
-                onClick={() => setSelected(project)}
+                className={`group py-8 flex flex-col md:flex-row md:items-center gap-4 md:gap-0 ${project.comingSoon ? "cursor-default" : "cursor-pointer"}`}
+                onClick={() => !project.comingSoon && setSelected(project)}
               >
                 {/* Number */}
                 <span className="font-mono text-[11px] text-muted/40 md:w-14 shrink-0">
@@ -31,7 +31,7 @@ export default function Projects() {
                 </span>
 
                 {/* Title */}
-                <h3 className="glitch font-body font-[200] text-2xl md:text-3xl text-text tracking-wide flex-1 group-hover:text-muted transition-colors duration-200">
+                <h3 className={`font-body font-[200] text-2xl md:text-3xl tracking-wide flex-1 transition-colors duration-200 ${project.comingSoon ? "text-muted/50" : "glitch text-text group-hover:text-muted"}`}>
                   {project.title}
                 </h3>
 
@@ -42,9 +42,15 @@ export default function Projects() {
                   ))}
                 </div>
 
-                {/* Arrow hint */}
-                <div className="flex items-center gap-1 md:ml-8 shrink-0 text-muted/0 group-hover:text-muted transition-colors duration-200">
-                  <ArrowUpRight size={16} />
+                {/* Arrow or coming soon hint */}
+                <div className="flex items-center gap-1 md:ml-8 shrink-0">
+                  {project.comingSoon ? (
+                    <span className="font-mono text-[10px] text-muted/40 tracking-widest uppercase">
+                      Soon
+                    </span>
+                  ) : (
+                    <ArrowUpRight size={16} className="text-muted/0 group-hover:text-muted transition-colors duration-200" />
+                  )}
                 </div>
               </article>
             </Reveal>
