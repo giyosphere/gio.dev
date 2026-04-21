@@ -140,7 +140,7 @@ export default function ProjectModal({ project, onClose }) {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 8 }}
                 transition={{ duration: 0.2 }}
-                className="absolute bottom-16 md:bottom-20 left-1/2 -translate-x-1/2 w-[calc(100%-32px)] max-w-sm bg-bg border border-border rounded-2xl px-4 md:px-5 py-3 md:py-4 shadow-2xl"
+                className="absolute bottom-16 md:bottom-20 inset-x-4 md:left-1/2 md:right-auto md:-translate-x-1/2 md:w-80 bg-bg border border-border rounded-2xl px-4 md:px-5 py-3 md:py-4 shadow-2xl"
               >
                 {activeTab === "Creator" && (
                   <div className="flex items-center gap-3">
