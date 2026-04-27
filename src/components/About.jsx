@@ -1,7 +1,14 @@
+import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import { FileText } from "lucide-react";
 import Reveal from "./Reveal.jsx";
+import ResumeModal from "./ResumeModal.jsx";
 
 export default function About() {
+  const [showResume, setShowResume] = useState(false);
+
   return (
+    <>
     <section id="about" className="py-24 md:py-32 px-6 md:px-12 lg:px-24">
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
         {/* Text */}
@@ -33,6 +40,15 @@ export default function About() {
               for quality to every layer of the stack.
             </p>
           </Reveal>
+          <Reveal delay={0.4}>
+            <button
+              onClick={() => setShowResume(true)}
+              className="mt-6 flex items-center gap-2 px-5 py-2.5 rounded-full border border-border text-sm font-body text-muted hover:text-text hover:border-text transition-all duration-200"
+            >
+              <FileText size={14} />
+              View Resume
+            </button>
+          </Reveal>
         </div>
 
         {/* Photo placeholder */}
@@ -44,5 +60,10 @@ export default function About() {
         </Reveal>
       </div>
     </section>
+
+    <AnimatePresence>
+      {showResume && <ResumeModal onClose={() => setShowResume(false)} />}
+    </AnimatePresence>
+    </>
   );
 }
