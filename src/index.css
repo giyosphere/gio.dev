@@ -67,3 +67,118 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+@media print {
+  @page { margin: 8mm 12mm; size: A4; }
+
+  body > * { display: none !important; }
+
+  #resume-print-area {
+    display: block !important;
+    position: static;
+    background: #ffffff;
+    color: #0d0d0d;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 7.5pt;
+    line-height: 1.35;
+    width: 100%;
+  }
+
+  #resume-print-area * {
+    color: inherit !important;
+    background: transparent !important;
+    border-color: #cccccc !important;
+    box-shadow: none !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Reset all spacing to tight values */
+  #resume-print-area [class*="mb-"],
+  #resume-print-area [class*="mt-"],
+  #resume-print-area [class*="py-"],
+  #resume-print-area [class*="pt-"],
+  #resume-print-area [class*="pb-"] {
+    margin-top: 3pt !important;
+    margin-bottom: 3pt !important;
+    padding-top: 2pt !important;
+    padding-bottom: 2pt !important;
+  }
+
+  #resume-print-area [class*="gap-"] {
+    gap: 3pt !important;
+  }
+
+  #resume-print-area [class*="px-"],
+  #resume-print-area [class*="pl-"],
+  #resume-print-area [class*="pr-"] {
+    padding-left: 6pt !important;
+    padding-right: 0 !important;
+  }
+
+  /* Header photo */
+  #resume-print-area img {
+    display: block;
+    width: 52pt !important;
+    height: 62pt !important;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 4pt;
+  }
+
+  /* Name heading */
+  #resume-print-area h1 {
+    font-size: 22pt !important;
+    line-height: 1 !important;
+    letter-spacing: 0.02em !important;
+  }
+
+  /* Section titles */
+  #resume-print-area h2 {
+    font-size: 6pt !important;
+    letter-spacing: 0.18em !important;
+    margin-bottom: 2pt !important;
+  }
+
+  /* Experience role titles */
+  #resume-print-area h3 {
+    font-size: 8pt !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Body text */
+  #resume-print-area p,
+  #resume-print-area li,
+  #resume-print-area span,
+  #resume-print-area a {
+    font-size: 7pt !important;
+    line-height: 1.35 !important;
+  }
+
+  /* Skill tag badges */
+  #resume-print-area [class*="rounded-full"] {
+    padding: 1pt 4pt !important;
+    font-size: 6pt !important;
+  }
+
+  /* Skills two-column grid stays side by side */
+  #resume-print-area .grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 8pt !important;
+  }
+
+  /* Keep sections from breaking mid-block */
+  #resume-print-area .mb-10,
+  #resume-print-area .pl-4,
+  #resume-print-area .flex-col > * {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Force single page */
+  #resume-print-area {
+    max-height: none;
+    overflow: visible;
+  }
+}

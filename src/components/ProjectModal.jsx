@@ -43,7 +43,7 @@ export default function ProjectModal({ project, onClose }) {
           <span className="font-body text-xs md:text-sm text-muted truncate pr-4">
             {project.title}{" "}
             <span className="text-muted/40">by</span>{" "}
-            <span className="text-text font-medium">Gio Dalaoyan</span>
+            <span className="text-text font-medium">Geomar Dalaoyan</span>
           </span>
           <div className="flex items-center gap-3 md:gap-5 shrink-0">
             <button aria-label="Bookmark" className="text-muted hover:text-text transition-colors p-1">
@@ -78,7 +78,7 @@ export default function ProjectModal({ project, onClose }) {
             <div className="w-5 h-5 md:w-6 md:h-6 rounded-full bg-surface border border-border flex items-center justify-center font-mono text-[9px] text-muted">
               G
             </div>
-            <span className="font-body text-xs md:text-sm text-text">Gio Dalaoyan</span>
+            <span className="font-body text-xs md:text-sm text-text">Geomar Dalaoyan</span>
           </div>
         </div>
 
@@ -162,8 +162,8 @@ export default function ProjectModal({ project, onClose }) {
                       G
                     </div>
                     <div>
-                      <p className="font-body text-sm text-text font-medium">Gio Dalaoyan</p>
-                      <p className="font-mono text-[10px] text-muted">Frontend Developer · UI Designer</p>
+                      <p className="font-body text-sm text-text font-medium">Geomar Dalaoyan</p>
+                      <p className="font-mono text-[10px] text-muted">MERN Stack Developer</p>
                     </div>
                   </div>
                 )}
@@ -250,14 +250,14 @@ export default function ProjectModal({ project, onClose }) {
               </button>
             ))}
 
-            {project.liveUrl && (
+            {(project.liveUrl || project.previewUrl) && (
               <a
-                href={project.liveUrl}
+                href={project.liveUrl || project.previewUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-[#f5c842] text-[#111] font-body font-medium text-[11px] md:text-xs px-4 md:px-5 py-2 md:py-2.5 m-1 rounded-xl hover:bg-[#f5c842]/90 transition-colors tracking-wide whitespace-nowrap shrink-0"
               >
-                Visit Site
+                {project.liveUrl ? "Visit Site" : "Full View"}
               </a>
             )}
           </div>

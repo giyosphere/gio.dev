@@ -20,7 +20,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             className="glitch font-body font-[100] text-[13.5vw] md:text-[9.5vw] leading-[0.92] tracking-[0.02em] uppercase text-text select-none"
           >
-            Gio
+            Geomar
             <br />
             Dalaoyan
           </motion.h1>
@@ -67,13 +67,13 @@ export default function Hero() {
 
         <div className="flex flex-col gap-5 mb-8">
           <p className="font-body text-muted text-sm leading-[1.8] font-[300]">
-            I&apos;m a frontend developer focused on building fast, beautiful, and accessible web experiences. I care deeply about the details — from smooth animations to pixel-perfect layouts.
+            I&apos;m a MERN stack developer and data specialist — I build full-stack web applications using MongoDB, Express, React, and Node.js, and turn raw data into actionable insights through analysis and visualization.
           </p>
           <p className="font-body text-muted text-sm leading-[1.8] font-[300]">
-            My main focus is web development and UI design. I enjoy exploring new technologies and experimenting with creative ideas.
+            Beyond the MERN stack, I work with SQL databases, REST APIs, data pipelines, and dashboard tooling — bridging the gap between software engineering and data-driven decision making.
           </p>
           <p className="font-body text-muted text-sm leading-[1.8] font-[300]">
-            Outside of programming, I&apos;m constantly learning new tools and pushing the limits of what&apos;s possible on the web.
+            I care about clean code, intuitive UI, and systems that scale — whether that&apos;s a polished React interface or a well-structured database schema.
           </p>
         </div>
 

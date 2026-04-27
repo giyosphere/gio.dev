@@ -72,7 +72,7 @@ export default function Navbar() {
         </div>
 
         <p className="font-mono text-[9px] text-muted leading-relaxed">
-          © Gio Dalaoyan
+          © Geomar Dalaoyan
         </p>
       </aside>
 
