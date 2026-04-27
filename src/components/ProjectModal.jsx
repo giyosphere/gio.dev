@@ -85,46 +85,18 @@ export default function ProjectModal({ project, onClose }) {
         {/* Website preview iframe / coming soon teaser */}
         <div className="flex-1 overflow-hidden relative">
           {project.isDataWork ? (
-            <div className="flex flex-col items-center justify-center h-full gap-6 px-8 text-center select-none">
-              <motion.p
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.15, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="font-mono text-[10px] tracking-[0.3em] uppercase text-muted"
-              >
-                Data Work · Excel
-              </motion.p>
-              <motion.h3
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.25, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="font-body font-[100] text-3xl md:text-5xl text-text leading-tight tracking-wide"
-              >
-                {project.title}
-              </motion.h3>
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.4, duration: 0.6 }}
-                className="font-body text-sm text-muted leading-relaxed max-w-sm"
-              >
-                {project.description}
-              </motion.p>
-              {project.sheets && (
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5, duration: 0.6 }}
-                  className="flex flex-wrap justify-center gap-2 max-w-sm"
-                >
-                  {project.sheets.map((sheet) => (
-                    <span key={sheet} className="font-mono text-[10px] px-3 py-1 rounded-full border border-border text-muted tracking-wide">
-                      {sheet}
-                    </span>
-                  ))}
-                </motion.div>
-              )}
-            </div>
+            project.previewUrl ? (
+              <iframe
+                src={project.previewUrl}
+                title={project.title}
+                className="w-full h-full border-0"
+                loading="lazy"
+              />
+            ) : (
+              <div className="flex items-center justify-center h-full text-muted font-mono text-xs">
+                No preview available
+              </div>
+            )
           ) : project.comingSoon ? (
             <div className="flex flex-col items-center justify-center h-full gap-6 px-8 text-center select-none">
               <motion.p
@@ -205,9 +177,20 @@ export default function ProjectModal({ project, onClose }) {
                 )}
 
                 {activeTab === "Details" && (
-                  <p className="font-body text-sm text-muted leading-relaxed">
-                    {project.description}
-                  </p>
+                  <div className="flex flex-col gap-3">
+                    <p className="font-body text-sm text-muted leading-relaxed">
+                      {project.description}
+                    </p>
+                    {project.sheets && (
+                      <div className="flex flex-wrap gap-1.5 pt-1">
+                        {project.sheets.map((sheet) => (
+                          <span key={sheet} className="font-mono text-[10px] px-2 py-1 rounded-full border border-border text-muted">
+                            {sheet}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 )}
 
                 {activeTab === "Links" && (
