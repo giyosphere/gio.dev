@@ -29,9 +29,23 @@ export const projects = [
 export const otherWorks = [
   {
     id: "other-1",
-    title: "Excel Data Project",
+    title: "Maruyog Ridge Hotel System",
     description:
-      "A data project built in Microsoft Excel — featuring data organization, analysis, and visualization using formulas, pivot tables, and charts.",
-    tags: ["Excel", "Data Analysis"],
+      "Hotel management system built in Excel covering operations for 2025–2026. Includes booking records, guest tracking, and reporting dashboards.",
+    tags: ["Excel", "Data Management", "2025–2026"],
+  },
+  {
+    id: "other-2",
+    title: "PCDC Purchase Order & Supplier Database",
+    description:
+      "Purchase order and supplier database system for PCDC spanning 2024–2026. Tracks supplier information, purchase orders, and procurement records.",
+    tags: ["Excel", "Database", "2024–2026"],
+  },
+  {
+    id: "other-3",
+    title: "TechMart Inventory Database",
+    description:
+      "Inventory management database for TechMart built in Excel. Handles product listings, stock levels, and inventory tracking for retail operations.",
+    tags: ["Excel", "Inventory", "Data Analysis"],
   },
 ];
