@@ -15,22 +15,22 @@ export default function About() {
             <h2 className="font-display text-4xl md:text-5xl text-text leading-tight mb-6">
               I build things
               <br />
-              <span className="text-accent italic">for the web.</span>
+              <span className="text-accent italic">that matter.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
             <p className="font-body text-muted leading-relaxed mb-4">
-              {/* TODO: Replace with your real bio */}
-              I&apos;m a frontend developer focused on creating fast, beautiful,
-              and accessible web experiences. I care deeply about the details —
-              from smooth animations to pixel-perfect layouts.
+              I&apos;m a MERN stack developer and data specialist — I build full-stack
+              web applications from the ground up and turn raw data into meaningful
+              insights. I care about both the experience users see and the systems
+              running behind the scenes.
             </p>
           </Reveal>
           <Reveal delay={0.3}>
             <p className="font-body text-muted leading-relaxed">
-              When I&apos;m not coding, I&apos;m probably sketching UI concepts,
-              exploring new design systems, or learning something that has no
-              practical purpose yet.
+              Whether it&apos;s architecting a REST API, crafting a smooth React UI,
+              or analyzing data to drive decisions — I bring the same obsession
+              for quality to every layer of the stack.
             </p>
           </Reveal>
         </div>
