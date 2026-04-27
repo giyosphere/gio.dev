@@ -33,6 +33,8 @@ export const otherWorks = [
     description:
       "A full hotel management system built in Excel for 2025–2026 operations. Covers room directory, guest master list, booking log, housekeeping tracking, billing & folio, and a revenue dashboard for real-time financial overview.",
     tags: ["Excel", "Hotel Management", "2025–2026"],
+    sheets: ["Room Directory", "Guest Master List", "Booking Log", "Housekeeping", "Revenue Dashboard", "Billing & Folio"],
+    isDataWork: true,
   },
   {
     id: "other-2",
@@ -40,6 +42,8 @@ export const otherWorks = [
     description:
       "An end-to-end procurement system in Excel for PCDC spanning 2024–2026. Includes a supplier master list, PO register, goods receipt log, AP payment tracker, supplier scorecard, and a procurement dashboard.",
     tags: ["Excel", "Procurement", "2024–2026"],
+    sheets: ["Supplier Master List", "PO Register", "Goods Receipt Log", "AP Payment Tracker", "Supplier Scorecard", "Procurement Dashboard"],
+    isDataWork: true,
   },
   {
     id: "other-3",
@@ -47,5 +51,7 @@ export const otherWorks = [
     description:
       "A retail inventory management system built in Excel for TechMart. Features a full inventory database, summary reports, an interactive dashboard, and an automated reorder alert system for low-stock items.",
     tags: ["Excel", "Inventory", "Dashboard"],
+    sheets: ["Inventory Database", "Summary", "Dashboard", "Reorder Alert"],
+    isDataWork: true,
   },
 ];

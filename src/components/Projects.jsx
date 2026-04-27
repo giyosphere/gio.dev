@@ -69,17 +69,23 @@ export default function Projects() {
         <div className="flex flex-col divide-y divide-border">
           {otherWorks.map((work, i) => (
             <Reveal key={work.id} delay={i * 0.08}>
-              <article className="group py-8 flex flex-col md:flex-row md:items-center gap-4 md:gap-0 cursor-default">
+              <article
+                className="group py-8 flex flex-col md:flex-row md:items-center gap-4 md:gap-0 cursor-pointer"
+                onClick={() => setSelected(work)}
+              >
                 <span className="font-mono text-[11px] text-muted/40 md:w-14 shrink-0">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="font-body font-[200] text-2xl md:text-3xl tracking-wide flex-1 text-text/60">
+                <h3 className="glitch font-body font-[200] text-2xl md:text-3xl tracking-wide flex-1 text-text group-hover:text-muted transition-colors duration-200">
                   {work.title}
                 </h3>
                 <div className="flex flex-wrap gap-2 md:w-56 shrink-0">
                   {work.tags.map((tag) => (
                     <Tag key={tag} label={tag} />
                   ))}
+                </div>
+                <div className="flex items-center gap-1 md:ml-8 shrink-0">
+                  <ArrowUpRight size={16} className="text-muted/0 group-hover:text-muted transition-colors duration-200" />
                 </div>
               </article>
             </Reveal>
