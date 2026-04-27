@@ -5,7 +5,7 @@ export const projects = [
     description:
       "Personal portfolio website built with React, Tailwind CSS, and Framer Motion. Designed with a minimal editorial aesthetic, smooth scroll animations, and a dark/light mode toggle.",
     tags: ["React", "Tailwind CSS", "Framer Motion"],
-    liveUrl: "https://gio-dev-nkja.vercel.app/",
+    liveUrl: "https://gio-dev-7f2x.vercel.app/",
     githubUrl: "https://github.com",
   },
   {
