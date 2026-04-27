@@ -31,7 +31,7 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.55 }}
             className="glitch font-body font-[200] text-muted text-base md:text-lg tracking-[0.06em] mt-5"
           >
-            Frontend Developer / Designer
+            MERN Stack Developer / Data Specialist
           </motion.p>
         </div>
 
