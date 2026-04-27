@@ -1,12 +1,12 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FileText } from "lucide-react";
+import ResumeModal from "./ResumeModal.jsx";
 
-const ABOUT_PARAGRAPHS = [
-  "I'm a frontend developer focused on building fast, beautiful, and accessible web experiences. I care deeply about the details — from smooth animations to pixel-perfect layouts.",
-  "My main focus is web development and UI design. I enjoy exploring new technologies and experimenting with creative ideas.",
-  "Outside of programming, I'm constantly learning new tools and pushing the limits of what's possible on the web.",
-];
 
 export default function Hero() {
+  const [showResume, setShowResume] = useState(false);
+
   return (
     <section
       id="home"
@@ -65,17 +65,30 @@ export default function Hero() {
           </span>
         </div>
 
-        <div className="flex flex-col gap-5">
-          {ABOUT_PARAGRAPHS.map((para, i) => (
-            <p
-              key={i}
-              className="font-body text-muted text-sm leading-[1.8] font-[300]"
-            >
-              {para}
-            </p>
-          ))}
+        <div className="flex flex-col gap-5 mb-8">
+          <p className="font-body text-muted text-sm leading-[1.8] font-[300]">
+            I&apos;m a frontend developer focused on building fast, beautiful, and accessible web experiences. I care deeply about the details — from smooth animations to pixel-perfect layouts.
+          </p>
+          <p className="font-body text-muted text-sm leading-[1.8] font-[300]">
+            My main focus is web development and UI design. I enjoy exploring new technologies and experimenting with creative ideas.
+          </p>
+          <p className="font-body text-muted text-sm leading-[1.8] font-[300]">
+            Outside of programming, I&apos;m constantly learning new tools and pushing the limits of what&apos;s possible on the web.
+          </p>
         </div>
+
+        <button
+          onClick={() => setShowResume(true)}
+          className="mt-8 flex items-center gap-2 px-5 py-2.5 rounded-full border border-border text-xs font-body text-muted hover:text-text hover:border-text transition-all duration-200 self-start"
+        >
+          <FileText size={13} />
+          View Resume
+        </button>
       </motion.div>
+
+      <AnimatePresence>
+        {showResume && <ResumeModal onClose={() => setShowResume(false)} />}
+      </AnimatePresence>
     </section>
   );
 }
