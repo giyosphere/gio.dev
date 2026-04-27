@@ -86,12 +86,27 @@ export default function ProjectModal({ project, onClose }) {
         <div className="flex-1 overflow-hidden relative">
           {project.isDataWork ? (
             project.previewUrl ? (
-              <iframe
-                src={project.previewUrl}
-                title={project.title}
-                className="w-full h-full border-0"
-                loading="lazy"
-              />
+              <div className="relative w-full h-full">
+                <iframe
+                  src={project.previewUrl}
+                  title={project.title}
+                  className="w-full h-full border-0"
+                  loading="lazy"
+                />
+                {project.hasConfidential && (
+                  <>
+                    {/* Blur right ~32% — covers amount/total columns */}
+                    <div
+                      className="absolute top-0 right-0 h-full pointer-events-none"
+                      style={{ width: "32%", backdropFilter: "blur(10px)", WebkitBackdropFilter: "blur(10px)" }}
+                    />
+                    {/* Privacy badge */}
+                    <div className="absolute top-3 right-3 flex items-center gap-1.5 bg-black/60 backdrop-blur-sm text-white/70 font-mono text-[9px] tracking-widest uppercase px-2.5 py-1 rounded-full pointer-events-none">
+                      <span>🔒</span> Financial data hidden
+                    </div>
+                  </>
+                )}
+              </div>
             ) : (
               <div className="flex items-center justify-center h-full text-muted font-mono text-xs">
                 No preview available

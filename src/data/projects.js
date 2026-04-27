@@ -36,6 +36,7 @@ export const otherWorks = [
     sheets: ["Room Directory", "Guest Master List", "Booking Log", "Housekeeping", "Revenue Dashboard", "Billing & Folio"],
     previewUrl: "https://view.officeapps.live.com/op/embed.aspx?src=https://gio-dev-7f2x.vercel.app/Maruyog_Ridge_Hotel_System_2025_2026.xlsx",
     isDataWork: true,
+    hasConfidential: true,
   },
   {
     id: "other-2",
@@ -46,6 +47,7 @@ export const otherWorks = [
     sheets: ["Supplier Master List", "PO Register", "Goods Receipt Log", "AP Payment Tracker", "Supplier Scorecard", "Procurement Dashboard"],
     previewUrl: "https://view.officeapps.live.com/op/embed.aspx?src=https://gio-dev-7f2x.vercel.app/PCDC_PurchaseOrder_Supplier_Database_2024_2026.xlsx",
     isDataWork: true,
+    hasConfidential: true,
   },
   {
     id: "other-3",
@@ -56,5 +58,6 @@ export const otherWorks = [
     sheets: ["Inventory Database", "Summary", "Dashboard", "Reorder Alert"],
     previewUrl: "https://view.officeapps.live.com/op/embed.aspx?src=https://gio-dev-7f2x.vercel.app/TechMart_Inventory_Database.xlsx",
     isDataWork: true,
+    hasConfidential: true,
   },
 ];

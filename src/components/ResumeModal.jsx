@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { X, Mail, Phone, MapPin, Download } from "lucide-react";
+import profilePhoto from "../assets/Geomar_Photo.jpg";
 
 export default function ResumeModal({ onClose }) {
 
@@ -85,7 +86,7 @@ export default function ResumeModal({ onClose }) {
 
 <!-- Header -->
 <div class="header">
-  <img src="${window.location.origin}${import.meta.env.BASE_URL}images/Geomar_Photo.jpg" alt="Geomar Dalaoyan"/>
+  <img src="${profilePhoto}" alt="Geomar Dalaoyan"/>
   <div class="header-info">
     <p class="cv-label">Curriculum Vitae</p>
     <h1>Geomar<br/><span>Dalaoyan</span></h1>
@@ -276,7 +277,7 @@ export default function ResumeModal({ onClose }) {
             <div className="mb-10 pb-8 border-b border-border">
               <div className="flex items-start gap-6 md:gap-10">
                 <img
-                  src={`${import.meta.env.BASE_URL}images/Geomar_Photo.jpg`}
+                  src={profilePhoto}
                   alt="Geomar Dalaoyan"
                   loading="lazy"
                   className="w-24 h-28 md:w-32 md:h-36 object-cover object-top rounded-xl border border-border shrink-0"
