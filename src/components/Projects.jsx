@@ -4,7 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import Reveal from "./Reveal.jsx";
 import Tag from "./ui/Tag.jsx";
 import ProjectModal from "./ProjectModal.jsx";
-import { projects } from "@/data/projects.js";
+import { projects, otherWorks } from "@/data/projects.js";
 
 export default function Projects() {
   const [selected, setSelected] = useState(null);
@@ -51,6 +51,35 @@ export default function Projects() {
                   ) : (
                     <ArrowUpRight size={16} className="text-muted/0 group-hover:text-muted transition-colors duration-200" />
                   )}
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* Other Works */}
+      <section className="py-16 md:py-20 px-8 md:px-14 lg:px-20 border-b border-border">
+        <Reveal>
+          <p className="font-body text-[11px] tracking-[0.22em] uppercase text-muted mb-8">
+            Other Works
+          </p>
+        </Reveal>
+
+        <div className="flex flex-col divide-y divide-border">
+          {otherWorks.map((work, i) => (
+            <Reveal key={work.id} delay={i * 0.08}>
+              <article className="group py-8 flex flex-col md:flex-row md:items-center gap-4 md:gap-0 cursor-default">
+                <span className="font-mono text-[11px] text-muted/40 md:w-14 shrink-0">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="font-body font-[200] text-2xl md:text-3xl tracking-wide flex-1 text-text/60">
+                  {work.title}
+                </h3>
+                <div className="flex flex-wrap gap-2 md:w-56 shrink-0">
+                  {work.tags.map((tag) => (
+                    <Tag key={tag} label={tag} />
+                  ))}
                 </div>
               </article>
             </Reveal>

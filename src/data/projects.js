@@ -25,3 +25,13 @@ export const projects = [
     comingSoon: true,
   },
 ];
+
+export const otherWorks = [
+  {
+    id: "other-1",
+    title: "Excel Data Project",
+    description:
+      "A data project built in Microsoft Excel — featuring data organization, analysis, and visualization using formulas, pivot tables, and charts.",
+    tags: ["Excel", "Data Analysis"],
+  },
+];
