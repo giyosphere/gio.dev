@@ -31,21 +31,21 @@ export const otherWorks = [
     id: "other-1",
     title: "Maruyog Ridge Hotel System",
     description:
-      "Hotel management system built in Excel covering operations for 2025–2026. Includes booking records, guest tracking, and reporting dashboards.",
-    tags: ["Excel", "Data Management", "2025–2026"],
+      "A full hotel management system built in Excel for 2025–2026 operations. Covers room directory, guest master list, booking log, housekeeping tracking, billing & folio, and a revenue dashboard for real-time financial overview.",
+    tags: ["Excel", "Hotel Management", "2025–2026"],
   },
   {
     id: "other-2",
     title: "PCDC Purchase Order & Supplier Database",
     description:
-      "Purchase order and supplier database system for PCDC spanning 2024–2026. Tracks supplier information, purchase orders, and procurement records.",
-    tags: ["Excel", "Database", "2024–2026"],
+      "An end-to-end procurement system in Excel for PCDC spanning 2024–2026. Includes a supplier master list, PO register, goods receipt log, AP payment tracker, supplier scorecard, and a procurement dashboard.",
+    tags: ["Excel", "Procurement", "2024–2026"],
   },
   {
     id: "other-3",
     title: "TechMart Inventory Database",
     description:
-      "Inventory management database for TechMart built in Excel. Handles product listings, stock levels, and inventory tracking for retail operations.",
-    tags: ["Excel", "Inventory", "Data Analysis"],
+      "A retail inventory management system built in Excel for TechMart. Features a full inventory database, summary reports, an interactive dashboard, and an automated reorder alert system for low-stock items.",
+    tags: ["Excel", "Inventory", "Dashboard"],
   },
 ];
